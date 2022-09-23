@@ -84,7 +84,7 @@ for f in filelist # for over the files in the folder
 
         function additional_l(phi, θ, p)
             #print( θ)
-            loss= sum(sum(abs2, [first(phi[1]([t_s], θ[:n_])) for t_s in times_data] .- log.(data[2,:]) ) / length(data[2,:]) )
+            loss= sum(sum(abs2, [exp.(first(phi[1]([t_s], θ[:n_]))) for t_s in times_data] .- (data[2,:]) ) / length(data[2,:]) )
             return loss
         end
 
