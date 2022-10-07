@@ -15,14 +15,14 @@ NOTES: to start the environment, open julia copy the project folder in the chose
 1. Using REPL or the COMMAND LINE move to the working directory.  
 2. If you use the COMMAND LINE, to start a Julia session run the command:
 
-> 'julia'
+> julia
 
 3. To enter in the Pkg REPL  type 
 
->']'  
+>]  
 
 4. Type the command 
-> 'activate .'
+> activate .
 
 5. To install the package of the project, type
-> 'instantiate'
+> instantiate
