@@ -38,7 +38,7 @@ eqs = Dt(g(t,x)) ~  - 1 * s * x * (1 - x ) * Dx(g(t,x)) + ((x *(1-x)) /( 2 * exp
 "Imposing intial condition"
 
 ##  points where the inital condition is evaluated
-array_of_x = [0.0:0.01:1;]
+array_of_x = [0.0:0.1:1;]
 
 #### EQUILIBRIUM BCS
 if s > 0

@@ -45,9 +45,8 @@ dt=0.01
 _strategy = NeuralPDE.GridTraining(dt)
   #_strategy = QuadratureTraining()
 ### IMPORTING DATA
-cd("//Users//fabrizio.angaroni//Documents//dati-fitting")
+cd("C://Users//fabri//Desktop//PINN_tutorials-main//code example//Fitting ODE Julia//example data")
 filelist = readdir()
-filelist = filelist[2:end]
 counter = 0.0
 
 
@@ -113,7 +112,7 @@ for f in filelist # for over the files in the folder
         test_sol = [discretization.phi[1]([t_s],minimizers_n )[1] for t_s in times_data]
         pt1= Plots.scatter(tsteps,od_values,markersize=0.4,xlabel="Time (min)",ylabel= "OD")
         pt2= plot!(times_data,exp.(test_sol))
-        png(string("//Users//fabrizio.angaroni//Documents//results_gc_fitter//huang_results_nn_well_",w,"_experiment_",counter))
+        png(string("C://Users//fabri//Desktop//PINN_tutorials-main//code example//Fitting ODE Julia//Plots//huang_results_nn_well_",w,"_experiment_",counter))
 
         # mu_max, m_, Kp_, nu_, n_max
         "reading results of inferred parameters"
@@ -127,10 +126,10 @@ for f in filelist # for over the files in the folder
         println(string("the inferred lambda is ",inf_lambda ))
         println(string("the inferred alpha is ",inf_alpha ))
 
-        write(string("//Users//fabrizio.angaroni//Documents//results_gc_fitter//huang_results_nn_well_",w,"_experiment_",counter,"mu_max.txt"),string(inf_mu_max))
-        write(string("//Users//fabrizio.angaroni//Documents//results_gc_fitter//huang_results_nn_well_",w,"_experiment_",counter,"lambda.txt"),string(inf_lambda))
-        write(string("//Users//fabrizio.angaroni//Documents//results_gc_fitter//huang_results_nn_well_",w,"_experiment_",counter,"alpha.txt"),string(inf_alpha))
-        write(string("//Users//fabrizio.angaroni//Documents//results_gc_fitter//huang_results_nn_well_",w,"_experiment_",counter,"n_max.txt"),string(inf_n_max))
+        write(string("C://Users//fabri//Desktop//PINN_tutorials-main//code example//Fitting ODE Julia//results//huang_results_nn_well_",w,"_experiment_",counter,"mu_max.txt"),string(inf_mu_max))
+        write(string("C://Users//fabri//Desktop//PINN_tutorials-main//code example//Fitting ODE Julia//results//huang_results_nn_well_",w,"_experiment_",counter,"lambda.txt"),string(inf_lambda))
+        write(string("C://Users//fabri//Desktop//PINN_tutorials-main//code example//Fitting ODE Julia//results//huang_results_nn_well_",w,"_experiment_",counter,"alpha.txt"),string(inf_alpha))
+        write(string("C://Users//fabri//Desktop//PINN_tutorials-main//code example//Fitting ODE Julia//results//huang_results_nn_well_",w,"_experiment_",counter,"n_max.txt"),string(inf_n_max))
         result_mu_max = push!(result_mu_max,inf_mu_max)
         #test_mu = [discretization.phi[1]([t_s],minimizers_mu )[1] for t_s in times_data]
         #plot(times_data,test_mu )
@@ -142,7 +141,7 @@ for f in filelist # for over the files in the folder
     end    ## end of loop over the wells
 
 end # end of the for over the files in the folder
-write(string("//Users//fabrizio.angaroni//Documents//results_gc_fitter//huang_results_mu_max_summary.txt"),string(result_mu_max))
+write(string("C://Users//fabri//Desktop//PINN_tutorials-main//code example//Fitting ODE Julia//results//huang_results_mu_max_summary.txt"),string(result_mu_max))
 
 
 "##############################################################################"

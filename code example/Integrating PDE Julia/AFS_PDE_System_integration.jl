@@ -1,5 +1,4 @@
-"""
-TEST PARTIAL DIFFERENTIAL EQUATION resoltuion using PINN
+""" TEST PARTIAL DIFFERENTIAL EQUATION resoltuion using PINN
 Dynamics from: Non-equilibrium theory of the allele frequency spectrum
 Theoretical Population Biology 71 (2007) 109–119. Using an logistic growing pop.
 but now also pop growth is defined by a differental equation
@@ -154,5 +153,3 @@ gif(anim, "test_vf.gif", fps=200)
 )
 
 # number of elements in the model
-
-test_sol = [phi[2]( [t_s], minimizers_n_pop ) for t_s in times_data]
